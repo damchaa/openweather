@@ -21,6 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Map;
 @SpringBootApplication
+@EnableScheduling
 
 public class Application {
 

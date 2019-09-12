@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Entity
 public class Customer {
@@ -23,8 +25,9 @@ public class Customer {
     private String idd;
     private String name;
     private String code;
+    private Date date;
 
-    public Customer(String cord,String weather, String base, String main, String wind, String clouds, String dt, String sys, String timezone, String idd, String name, String code) {
+    public Customer(String cord,String weather, String base, String main, String wind, String clouds, String dt, String sys, String timezone, String idd, String name, String code, Date date) {
         this.cord = cord;
         this.weather = weather;
         this.base = base;
@@ -37,6 +40,7 @@ public class Customer {
         this.idd = idd;
         this.name = name;
         this.code = code;
+        this.date = date;
     }
 
     protected Customer() {}
@@ -97,8 +101,8 @@ public class Customer {
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%d, cord ='%s',weather ='%s', base='%s',main='%s',wind='%s',clouds='%s',dt='%s',sys='%s',idd='%s',name='%s',code='%s']",
-                id, cord,weather, base,main,wind,clouds,dt,sys,idd,name,code);
+                "Customer[id=%d , cord ='%s' ,weather ='%s', base='%s' ,main='%s',wind='%s',clouds='%s',dt='%s',sys='%s',idd='%s',name='%s',code='%s',date='%s']",
+                id, cord,weather, base,main,wind,clouds,dt,sys,idd,name,code,date);
     }
 
 }
