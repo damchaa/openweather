@@ -1,9 +1,6 @@
 package hello;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.xml.crypto.Data;
 import java.util.Date;
 
@@ -25,7 +22,12 @@ public class Customer {
     private String idd;
     private String name;
     private String code;
-    private Date date;
+    @Temporal(TemporalType.DATE)
+    private Date date = new Date();
+
+    public Customer(Date date){
+        this.date = date;
+    }
 
     public Customer(String cord,String weather, String base, String main, String wind, String clouds, String dt, String sys, String timezone, String idd, String name, String code, Date date) {
         this.cord = cord;
@@ -96,6 +98,62 @@ public class Customer {
     public String getCode() {
         return code;
     }
+    public Date getDate(){
+        return date;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCord(String cord) {
+        this.cord = cord;
+    }
+
+    public void setWeather(String weather) {
+        this.weather = weather;
+    }
+
+    public void setBase(String base) {
+        this.base = base;
+    }
+
+    public void setMain(String main) {
+        this.main = main;
+    }
+
+    public void setWind(String wind) {
+        this.wind = wind;
+    }
+
+    public void setClouds(String clouds) {
+        this.clouds = clouds;
+    }
+
+    public void setDt(String dt) {
+        this.dt = dt;
+    }
+
+    public void setSys(String sys) {
+        this.sys = sys;
+    }
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    public void setIdd(String idd) {
+        this.idd = idd;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
 
 
     @Override
